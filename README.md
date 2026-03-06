@@ -8,7 +8,7 @@
 
 > A modern, responsive personal portfolio website for **Shakeeb Muhammad Paracha** — Business/Data Analyst & Power BI Specialist.
 
-🌐 **Live Site:** [shakeeb-paracha.github.io](https://shakeeb-paracha.github.io)
+🌐 **Live Site:** [shakeebparacha.github.io/Shakeeb-Paracha.github.io](https://shakeebparacha.github.io/Shakeeb-Paracha.github.io/)
 
 ---
 
@@ -136,7 +136,7 @@ portfolio/
 2. Upload all project files (`index.html`, `style.css`, `script.js`)
 3. Go to **Settings → Pages**
 4. Set source to `main` branch → `/ (root)` → Click **Save**
-5. Your site is live at `https://shakeeb-paracha.github.io` 🎉
+5. Your site is live at `https://shakeebparacha.github.io/Shakeeb-Paracha.github.io/` 🎉
 
 ### Other Free Hosting Options
 
