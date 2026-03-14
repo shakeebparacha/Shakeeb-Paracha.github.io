@@ -23,12 +23,32 @@ function updateThemeIcon(theme) {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
+function setMenuState(open) {
+  navLinks.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+}
+
+hamburger.setAttribute('aria-expanded', 'false');
+
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+  const nextOpen = !navLinks.classList.contains('open');
+  setMenuState(nextOpen);
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
+  link.addEventListener('click', () => setMenuState(false));
+});
+
+document.addEventListener('click', (e) => {
+  if (!navLinks.classList.contains('open')) return;
+  if (navLinks.contains(e.target) || hamburger.contains(e.target)) return;
+  setMenuState(false);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+    setMenuState(false);
+  }
 });
 
 // ===== STICKY NAVBAR =====
@@ -61,6 +81,8 @@ function updateActiveNav() {
     }
   });
 }
+
+window.addEventListener('load', updateActiveNav);
 
 // ===== TYPED TEXT =====
 const titles = [
@@ -144,7 +166,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      const navOffset = navbar ? navbar.offsetHeight + 12 : 0;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   });
 });
