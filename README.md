@@ -8,7 +8,7 @@
 
 > A modern, responsive personal portfolio website for **Shakeeb Muhammad Paracha** — Business/Data Analyst & Power BI Specialist.
 
-🌐 **Live Site:** [shakeebparacha.github.io/Shakeeb-Paracha.github.io](https://shakeebparacha.github.io/Shakeeb-Paracha.github.io/)
+🌐 **Live Site:** [shakeebparacha.github.io/Shakeeb-Paracha.github.io](https://shakeebparacha.github.io/Portfolio_Website/) 
 
 ---
 
